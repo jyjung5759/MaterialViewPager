@@ -195,7 +195,9 @@ public class MaterialViewPagerAnimator {
                     ViewCompat.setTranslationX(mHeader.mLogo, (mHeader.finalTitleX - mHeader.originalTitleX) * percent);
 
                     float scale = (1 - percent) * (1 - mHeader.finalScale) + mHeader.finalScale;
-                    setScale(scale, mHeader.mLogo);
+                    if(!Float.isNaN(scale)) {
+                        setScale(scale, mHeader.mLogo);
+                    }
                 }
             }
 
